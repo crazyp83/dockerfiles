@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'minimum2scp/baseimage-buster' do
+describe 'crazyp83/baseimage-buster' do
   context 'without env' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
       })
     end
 
@@ -195,7 +195,7 @@ describe 'minimum2scp/baseimage-buster' do
   context 'with env [APT_LINE=jp APT_HTTP_PROXY=http://x.x.x.x:3142/ DEFAULT_LANG=en_US.UTF-8, DEFAULT_TZ=UTC]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [ 'APT_LINE=jp', 'APT_HTTP_PROXY=http://x.x.x.x:3142/', 'DEFAULT_LANG=en_US.UTF-8', 'DEFAULT_TZ=UTC' ]
       })
     end
@@ -248,7 +248,7 @@ describe 'minimum2scp/baseimage-buster' do
   context 'with env [CUSTOM_USER=testuser]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [ 'CUSTOM_USER=testuser' ]
       })
     end
@@ -271,7 +271,7 @@ describe 'minimum2scp/baseimage-buster' do
   context 'with env [CUSTOM_USER=testuser, CUSTOM_USER_UID=1999, CUSTOM_USER_SHELL=/bin/false, CUSTOM_GROUP=testgrp, CUSTOM_GROUP_GID=1999]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [
           'CUSTOM_USER=testuser',
           'CUSTOM_USER_UID=1999',
@@ -302,7 +302,7 @@ describe 'minimum2scp/baseimage-buster' do
   context 'with env [INSTALL_DOCKER_CE_CLI=yes]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [ 'INSTALL_DOCKER_CE_CLI=yes' ]
       })
       # wait /opt/init-wrapper/post-init.d/07-docker-ce-cli
@@ -329,7 +329,7 @@ describe 'minimum2scp/baseimage-buster' do
   context 'with env [INSTALL_NGINX=yes]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [ 'INSTALL_NGINX=yes' ]
       })
 
