@@ -12,7 +12,7 @@ namespace :crazyp83 do
   task :debian do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
-    }[ENV['TAG_DEBIAN'], 'minimum2scp/debian:latest']
+    }[ENV['TAG_DEBIAN'], 'crazyp83/debian:latest']
     env = ENV.select{|k,v| %w[http_proxy].include?(k)}.map{|k,v| "#{k}=#{v}"}.join(" ")
     sh "cd debian && rake clobber mkimage README.md #{tag} #{env}"
   end
