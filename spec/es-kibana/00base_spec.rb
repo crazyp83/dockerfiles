@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'minimum2scp/es-kibana' do
+describe 'crazyp83/es-kibana' do
   context 'without env' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
       })
     end
 
@@ -47,7 +47,7 @@ describe 'minimum2scp/es-kibana' do
   context 'with env [ES_JAVA_OPTS="-Xms1024m -Xmx1024m"]' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [ 'ES_JAVA_OPTS=-Xms1024m -Xmx1024m' ]
       })
     end
