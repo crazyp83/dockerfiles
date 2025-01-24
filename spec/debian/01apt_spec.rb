@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'minimum2scp/debian' do
+describe 'crazyp83/debian' do
   describe 'apt' do
     before(:all) do
       set :backend, :docker
-      set :docker_image, ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest"
+      set :docker_image, ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest"
     end
 
     after(:all) do
