@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'minimum2scp/baseimage-bookworm' do
+describe 'crazyp83/baseimage-bookworm' do
   describe 'apt' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
       })
     end
 
