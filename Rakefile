@@ -2,9 +2,9 @@ require 'bundler/setup'
 require 'rake'
 require 'rspec/core/rake_task'
 
-task :default => "minimum2scp:all"
+task :default => "crazyp83:all"
 
-namespace :minimum2scp do
+namespace :crazyp83 do
   desc 'create all images'
   task :all => [:debian]
 
@@ -44,7 +44,7 @@ namespace :minimum2scp do
     sh "cd debian-buster && rake clobber mkimage README.md #{tag} #{env}"
   end
 
-  desc 'build minimum2scp/debian-stretch image'
+  desc 'build crazyp83/debian-stretch image'
   task :debian_stretch do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
