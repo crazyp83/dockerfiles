@@ -11,7 +11,7 @@ updates:
     timezone: Asia/Tokyo
   open-pull-requests-limit: 10
   reviewers:
-  - minimum2scp
+  - crazyp83
   allow:
     - dependency-type: all
 - package-ecosystem: github-actions
@@ -22,5 +22,5 @@ updates:
     timezone: Asia/Tokyo
   open-pull-requests-limit: 10
   reviewers:
-  - minimum2scp
+  - crazyp83
 
