@@ -42,7 +42,7 @@ describe 'crazyp83/ruby' do
     end
 
     describe command('ruby3.1 -v') do
-      its(:stdout) { should start_with('ruby 3.1.2p') }
+      its(:stdout) { should start_with('ruby 3.1.2-8.5') }
     end
 
     describe file('/opt/rbenv') do
