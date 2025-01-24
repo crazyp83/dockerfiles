@@ -8,7 +8,7 @@ namespace :minimum2scp do
   desc 'create all images'
   task :all => [:debian]
 
-  desc 'build minimum2scp/debian image'
+  desc 'build crazyp83/debian image'
   task :debian do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"

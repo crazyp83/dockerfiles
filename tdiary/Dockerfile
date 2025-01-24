@@ -1,5 +1,5 @@
-FROM minimum2scp/ruby:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/ruby:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/tdiary
 RUN run-parts --report --exit-on-error /tmp/build/tdiary/scripts && rm -rfv /tmp/build

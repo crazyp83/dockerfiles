@@ -1,5 +1,5 @@
-FROM minimum2scp/baseimage:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/baseimage:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/squid
 RUN run-parts --report --exit-on-error /tmp/build/squid/scripts && rm -rfv /tmp/build

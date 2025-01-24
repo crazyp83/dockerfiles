@@ -1,5 +1,5 @@
-FROM minimum2scp/baseimage:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/baseimage:latest
+LABEL maintainer="Paul Doyle <crazyp@ucloud.com>"
 
 COPY build /tmp/build/template
 RUN run-parts --report --exit-on-error /tmp/build/template/scripts && rm -rfv /tmp/build
