@@ -1,7 +1,7 @@
-# about minimum2scp/baseimage image
+# about crazyp83/baseimage image
 
- * based on [minimum2scp/debian](https://github.com/minimum2scp/dockerfiles/tree/master/debian) image
- * Runs [/opt/init-wrapper/sbin/init](https://github.com/minimum2scp/dockerfiles/blob/master/baseimage/build/opt/init-wrapper/sbin/init) by default
+ * based on [crazyp83/debian](https://github.com/crazyp83/dockerfiles/tree/master/debian) image
+ * Runs [/opt/init-wrapper/sbin/init](https://github.com/crazyp83/dockerfiles/blob/master/baseimage/build/opt/init-wrapper/sbin/init) by default
    * /opt/init-wrapper/sbin/init invokes all scripts in /opt/init-wrapper/pre-init.d (using run-parts), and exec /sbin/init
    * /sbin/init is replaced by sysvinit-core package
    * /sbin/init invokes sshd, rsyslogd, cron daemons
@@ -13,7 +13,7 @@
 ## start container
 
 ```
-docker run -d -p 2222:22 minimum2scp/baseimage:latest
+docker run -d -p 2222:22 crazyp83/baseimage:latest
 ```
 
 ## ssh login to container
