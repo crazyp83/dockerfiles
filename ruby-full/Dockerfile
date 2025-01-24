@@ -1,5 +1,5 @@
-FROM minimum2scp/ruby:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/ruby:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/ruby-full
 RUN run-parts --report --exit-on-error /tmp/build/ruby-full/scripts && rm -rfv /tmp/build
