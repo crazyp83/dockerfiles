@@ -1,5 +1,5 @@
-FROM minimum2scp/baseimage-bullseye:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/baseimage-bullseye:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/ruby-bullseye
 RUN run-parts --report --exit-on-error /tmp/build/ruby-bullseye/scripts && rm -rfv /tmp/build
