@@ -3,7 +3,7 @@
 ## usage:
 ##
 ##   git clone --branch v19.03.15 --depth 1 https://github.com/docker/docker-ce.git ~/go/src/github.com/docker/docker-ce
-##   rake mkimage TAG=minimum2scp/debian-buster:latest
+##   rake mkimage TAG=crazyp83/debian-buster:latest
 ##
 
 require 'erb'
@@ -44,7 +44,7 @@ end
 
 desc 'update debian-packages.json'
 file 'debian-packages.json' => ['build.log'] do |t|
-  tag = ENV['TAG'] || 'minimum2scp/debian-buster:latest'
+  tag = ENV['TAG'] || 'crazyp83/debian-buster:latest'
   tmpfile = Tempfile.new('packages')
   tmpfile.close
   fields = %w[
