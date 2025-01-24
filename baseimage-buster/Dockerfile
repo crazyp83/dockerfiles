@@ -1,5 +1,5 @@
-FROM minimum2scp/debian-buster:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/debian-buster:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/baseimage-buster
 RUN run-parts --report --exit-on-error /tmp/build/baseimage-buster/scripts && rm -rfv /tmp/build
