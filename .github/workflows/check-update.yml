@@ -19,7 +19,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/debian:latest
+      - run: docker pull crazyp83/debian:latest
       - run: bundle exec rspec spec/debian/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -38,7 +38,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/debian:latest",
+                    "value": "crazyp83/debian:latest",
                     "short": false
                   }
                 ]
@@ -62,7 +62,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/baseimage:latest
+      - run: docker pull crazyp83/baseimage:latest
       - run: bundle exec rspec spec/baseimage/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -81,7 +81,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/baseimage:latest",
+                    "value": "crazyp83/baseimage:latest",
                     "short": false
                   }
                 ]
@@ -104,7 +104,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/debian-bookworm:latest
+      - run: docker pull crazyp83/debian-bookworm:latest
       - run: bundle exec rspec spec/debian-bookworm/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -123,7 +123,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/debian-bookworm:latest",
+                    "value": "crazyp83/debian-bookworm:latest",
                     "short": false
                   }
                 ]
@@ -147,7 +147,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/baseimage-bookworm:latest
+      - run: docker pull crazyp83/baseimage-bookworm:latest
       - run: bundle exec rspec spec/baseimage-bookworm/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -166,7 +166,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/baseimage-bookworm:latest",
+                    "value": "crazyp83/baseimage-bookworm:latest",
                     "short": false
                   }
                 ]
@@ -189,7 +189,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/debian-bullseye:latest
+      - run: docker pull crazyp83/debian-bullseye:latest
       - run: bundle exec rspec spec/debian-bullseye/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -208,7 +208,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/debian-bullseye:latest",
+                    "value": "crazyp83/debian-bullseye:latest",
                     "short": false
                   }
                 ]
@@ -232,7 +232,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/baseimage-bullseye:latest
+      - run: docker pull crazyp83/baseimage-bullseye:latest
       - run: bundle exec rspec spec/baseimage-bullseye/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -251,7 +251,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/baseimage-bullseye:latest",
+                    "value": "crazyp83/baseimage-bullseye:latest",
                     "short": false
                   }
                 ]
@@ -274,7 +274,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/debian-buster:latest
+      - run: docker pull crazyp83/debian-buster:latest
       - run: bundle exec rspec spec/debian-buster/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -293,7 +293,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/debian-buster:latest",
+                    "value": "crazyp83/debian-buster:latest",
                     "short": false
                   }
                 ]
@@ -317,7 +317,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/baseimage-buster:latest
+      - run: docker pull crazyp83/baseimage-buster:latest
       - run: bundle exec rspec spec/baseimage-buster/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -336,7 +336,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/baseimage-buster:latest",
+                    "value": "crazyp83/baseimage-buster:latest",
                     "short": false
                   }
                 ]
@@ -359,7 +359,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/debian-stretch:latest
+      - run: docker pull crazyp83/debian-stretch:latest
       - run: bundle exec rspec spec/debian-stretch/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -378,7 +378,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/debian-stretch:latest",
+                    "value": "crazyp83/debian-stretch:latest",
                     "short": false
                   }
                 ]
@@ -402,7 +402,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/baseimage-stretch:latest
+      - run: docker pull crazyp83/baseimage-stretch:latest
       - run: bundle exec rspec spec/baseimage-stretch/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -421,7 +421,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/baseimage-stretch:latest",
+                    "value": "crazyp83/baseimage-stretch:latest",
                     "short": false
                   }
                 ]
