@@ -72,7 +72,7 @@ images = {
       <%- if image_conf[:build_image] -%>
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/<%= image %>:latest <%= image %>
+      - run: docker build -t crazyp83/<%= image %>:latest <%= image %>
       <%- else -%>
       - uses: actions/checkout@v4
       <%- end -%>
@@ -93,7 +93,7 @@ images = {
 
       <%- if image_conf[:save_artifact] -%>
       # save image as artifact
-      - run: docker save minimum2scp/<%= image %>:latest | pigz -c - > /tmp/<%= image %>.tar.gz
+      - run: docker save crazyp83/<%= image %>:latest | pigz -c - > /tmp/<%= image %>.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: <%= image %>, path: /tmp/<%= image %>.tar.gz }
       <%- else -%>
@@ -102,9 +102,9 @@ images = {
 
       <%- if image_conf[:push_image] -%>
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/<%= image %>:latest
+      - run: docker push crazyp83/<%= image %>:latest
         if: github.ref == 'refs/heads/master'
       <%- else -%>
       # no need to push image
