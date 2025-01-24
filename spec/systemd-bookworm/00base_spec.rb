@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'minimum2scp/systemd-bookworm' do
+describe 'crazyp83/systemd-bookworm' do
   context 'without env' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'HostConfig' => { 'Privileged' => true },
       })
     end
