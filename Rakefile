@@ -17,7 +17,7 @@ namespace :minimum2scp do
     sh "cd debian && rake clobber mkimage README.md #{tag} #{env}"
   end
 
-  desc 'build minimum2scp/debian-bookworm image'
+  desc 'build crazyp83/debian-bookworm image'
   task :debian_bookworm do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
@@ -26,7 +26,7 @@ namespace :minimum2scp do
     sh "cd debian-bookworm && rake clobber mkimage README.md #{tag} #{env}"
   end
 
-  desc 'build minimum2scp/debian-bullseye image'
+  desc 'build crazyp83/debian-bullseye image'
   task :debian_bullseye do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
@@ -35,7 +35,7 @@ namespace :minimum2scp do
     sh "cd debian-bullseye && rake clobber mkimage README.md #{tag} #{env}"
   end
 
-  desc 'build minimum2scp/debian-buster image'
+  desc 'build crazyp83/debian-buster image'
   task :debian_buster do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
