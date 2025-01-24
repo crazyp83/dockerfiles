@@ -6,9 +6,9 @@
 ##  - USER_SSH_KEY_URI        : ssh public key uri (or github account) for debian user
 ##  - ROOT_PASSWORD           : root password
 ##  - ROOT_SSH_KEY_URI        : ssh public key uri (or github account) for root
-##  - CUSTOM_USER             : custom user account
-##  - CUSTOM_USER_PASSWORD    : password for custom user
-##  - CUSTOM_USER_SSH_KEY_URI : ssh public key uri (or github account) for custom user
+  - CUSTOM_USER             : pi
+  - CUSTOM_USER_PASSWORD    : raspberry
+  - CUSTOM_USER_SSH_KEY_URI : ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfSVlhNe0NBy5XSeCV/jCDXH4JEBxKR41++dksan9W9zulGdgSqTmC3MPJ6eoCTUGVqn+F+zpTyJtLSq31Vm3aaSdQ2eRPFnS9sgdTK1rDtxitkbIKcfAi1LZu1Xkhu2wqov1tAljlBMvCUjD3hl4GRlfMOw+mPEZkNa/yAotxjjBEFH79+MqtzAqUk9TuG6J6mdojceqL5M/lpPtolLFb+5oD3b9j7V0DxfwcE2P/8Le2ULEs1oXuICfhJf6w3vzyieo8dCywTB6e1HAbHiP/aaHfts+vWzOxGh7gNuufD8wDvSDDg7m1GGXHhgVEUZOdNpf4BNIsyV8rXN9fvTdj Retronas@Prompt3
 ##
 
 change_password (){

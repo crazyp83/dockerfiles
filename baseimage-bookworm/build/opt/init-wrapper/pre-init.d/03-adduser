@@ -2,12 +2,12 @@
 
 ## environment variables
 ##
-##   - CUSTOM_GROUP            :  group name
-##   - CUSTOM_GROUP_GID        :  group id
-##   - CUSTOM_USER             :  user name
-##   - CUSTOM_USER_UID         :  user id
-##   - CUSTOM_USER_GECOS       :  gecos field for user
-##   - CUSTOM_USER_SHELL       :  login shell for user
+   - CUSTOM_GROUP            :  pi
+   - CUSTOM_GROUP_GID        :  1000
+   - CUSTOM_USER             :  pi
+   - CUSTOM_USER_UID         :  1000
+   - CUSTOM_USER_GECOS       :  Raspberry Pi
+   - CUSTOM_USER_SHELL       :  /bin/bash
 ##
 
 if [ -n "${CUSTOM_USER}" ]; then

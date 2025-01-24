@@ -21,7 +21,7 @@ namespace :crazyp83 do
   task :debian_bookworm do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
-    }[ENV['TAG_DEBIAN'], 'minimum2scp/debian-bookworm:latest']
+    }[ENV['TAG_DEBIAN'], 'crazyp83/debian-bookworm:latest']
     env = ENV.select{|k,v| %w[http_proxy].include?(k)}.map{|k,v| "#{k}=#{v}"}.join(" ")
     sh "cd debian-bookworm && rake clobber mkimage README.md #{tag} #{env}"
   end
@@ -30,7 +30,7 @@ namespace :crazyp83 do
   task :debian_bullseye do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
-    }[ENV['TAG_DEBIAN'], 'minimum2scp/debian-bullseye:latest']
+    }[ENV['TAG_DEBIAN'], 'crazyp83/debian-bullseye:latest']
     env = ENV.select{|k,v| %w[http_proxy].include?(k)}.map{|k,v| "#{k}=#{v}"}.join(" ")
     sh "cd debian-bullseye && rake clobber mkimage README.md #{tag} #{env}"
   end
@@ -39,7 +39,7 @@ namespace :crazyp83 do
   task :debian_buster do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
-    }[ENV['TAG_DEBIAN'], 'minimum2scp/debian-buster:latest']
+    }[ENV['TAG_DEBIAN'], 'crazyp83/debian-buster:latest']
     env = ENV.select{|k,v| %w[http_proxy].include?(k)}.map{|k,v| "#{k}=#{v}"}.join(" ")
     sh "cd debian-buster && rake clobber mkimage README.md #{tag} #{env}"
   end
@@ -48,7 +48,7 @@ namespace :crazyp83 do
   task :debian_stretch do
     tag = ->(env, default){
       env ? (!env.empty? ? "TAG=#{env}" : "") : "TAG=#{default}"
-    }[ENV['TAG_DEBIAN'], 'minimum2scp/debian-stretch:latest']
+    }[ENV['TAG_DEBIAN'], 'crazyp83/debian-stretch:latest']
     env = ENV.select{|k,v| %w[http_proxy].include?(k)}.map{|k,v| "#{k}=#{v}"}.join(" ")
     sh "cd debian-stretch && rake clobber mkimage README.md #{tag} #{env}"
   end
