@@ -32,7 +32,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/baseimage:latest baseimage
+      - run: docker build -t crazyp83/baseimage:latest baseimage
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -44,14 +44,14 @@ jobs:
       - run: bundle exec rspec spec/baseimage
 
       # save image as artifact
-      - run: docker save minimum2scp/baseimage:latest | pigz -c - > /tmp/baseimage.tar.gz
+      - run: docker save crazyp83/baseimage:latest | pigz -c - > /tmp/baseimage.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: baseimage, path: /tmp/baseimage.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/baseimage:latest
+      - run: docker push crazyp83/baseimage:latest
         if: github.ref == 'refs/heads/master'
 
   ruby:
@@ -69,7 +69,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby:latest ruby
+      - run: docker build -t crazyp83/ruby:latest ruby
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -81,14 +81,14 @@ jobs:
       - run: bundle exec rspec spec/ruby
 
       # save image as artifact
-      - run: docker save minimum2scp/ruby:latest | pigz -c - > /tmp/ruby.tar.gz
+      - run: docker save crazyp83/ruby:latest | pigz -c - > /tmp/ruby.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: ruby, path: /tmp/ruby.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby:latest
+      - run: docker push crazyp83/ruby:latest
         if: github.ref == 'refs/heads/master'
 
   nodejs:
@@ -106,7 +106,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/nodejs:latest nodejs
+      - run: docker build -t crazyp83/nodejs:latest nodejs
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -120,9 +120,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/nodejs:latest
+      - run: docker push crazyp83/nodejs:latest
         if: github.ref == 'refs/heads/master'
 
   es-kibana:
@@ -140,7 +140,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/es-kibana:latest es-kibana
+      - run: docker build -t crazyp83/es-kibana:latest es-kibana
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -157,9 +157,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/es-kibana:latest
+      - run: docker push crazyp83/es-kibana:latest
         if: github.ref == 'refs/heads/master'
 
   systemd:
@@ -177,7 +177,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/systemd:latest systemd
+      - run: docker build -t crazyp83/systemd:latest systemd
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -191,9 +191,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/systemd:latest
+      - run: docker push crazyp83/systemd:latest
         if: github.ref == 'refs/heads/master'
 
   squid:
@@ -211,7 +211,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/squid:latest squid
+      - run: docker build -t crazyp83/squid:latest squid
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -225,9 +225,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/squid:latest
+      - run: docker push crazyp83/squid:latest
         if: github.ref == 'refs/heads/master'
 
   norikra:
@@ -245,7 +245,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/norikra:latest norikra
+      - run: docker build -t crazyp83/norikra:latest norikra
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -259,9 +259,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/norikra:latest
+      - run: docker push crazyp83/norikra:latest
         if: github.ref == 'refs/heads/master'
 
   ruby-full:
@@ -279,7 +279,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby-full:latest ruby-full
+      - run: docker build -t crazyp83/ruby-full:latest ruby-full
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -293,9 +293,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby-full:latest
+      - run: docker push crazyp83/ruby-full:latest
         if: github.ref == 'refs/heads/master'
 
   rails7:
@@ -313,7 +313,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/rails7:latest rails7
+      - run: docker build -t crazyp83/rails7:latest rails7
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -327,9 +327,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/rails7:latest
+      - run: docker push crazyp83/rails7:latest
         if: github.ref == 'refs/heads/master'
 
   tdiary:
@@ -347,7 +347,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/tdiary:latest tdiary
+      - run: docker build -t crazyp83/tdiary:latest tdiary
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -361,9 +361,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/tdiary:latest
+      - run: docker push crazyp83/tdiary:latest
         if: github.ref == 'refs/heads/master'
 
   debian-bookworm:
@@ -395,7 +395,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/baseimage-bookworm:latest baseimage-bookworm
+      - run: docker build -t crazyp83/baseimage-bookworm:latest baseimage-bookworm
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -407,14 +407,14 @@ jobs:
       - run: bundle exec rspec spec/baseimage-bookworm
 
       # save image as artifact
-      - run: docker save minimum2scp/baseimage-bookworm:latest | pigz -c - > /tmp/baseimage-bookworm.tar.gz
+      - run: docker save crazyp83/baseimage-bookworm:latest | pigz -c - > /tmp/baseimage-bookworm.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: baseimage-bookworm, path: /tmp/baseimage-bookworm.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/baseimage-bookworm:latest
+      - run: docker push crazyp83/baseimage-bookworm:latest
         if: github.ref == 'refs/heads/master'
 
   ruby-bookworm:
@@ -432,7 +432,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby-bookworm:latest ruby-bookworm
+      - run: docker build -t crazyp83/ruby-bookworm:latest ruby-bookworm
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -446,9 +446,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby-bookworm:latest
+      - run: docker push crazyp83/ruby-bookworm:latest
         if: github.ref == 'refs/heads/master'
 
   systemd-bookworm:
@@ -466,7 +466,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/systemd-bookworm:latest systemd-bookworm
+      - run: docker build -t crazyp83/systemd-bookworm:latest systemd-bookworm
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -480,9 +480,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/systemd-bookworm:latest
+      - run: docker push crazyp83/systemd-bookworm:latest
         if: github.ref == 'refs/heads/master'
 
   debian-bullseye:
@@ -514,7 +514,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/baseimage-bullseye:latest baseimage-bullseye
+      - run: docker build -t crazyp83/baseimage-bullseye:latest baseimage-bullseye
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -526,14 +526,14 @@ jobs:
       - run: bundle exec rspec spec/baseimage-bullseye
 
       # save image as artifact
-      - run: docker save minimum2scp/baseimage-bullseye:latest | pigz -c - > /tmp/baseimage-bullseye.tar.gz
+      - run: docker save crazyp83/baseimage-bullseye:latest | pigz -c - > /tmp/baseimage-bullseye.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: baseimage-bullseye, path: /tmp/baseimage-bullseye.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/baseimage-bullseye:latest
+      - run: docker push crazyp83/baseimage-bullseye:latest
         if: github.ref == 'refs/heads/master'
 
   ruby-bullseye:
@@ -551,7 +551,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby-bullseye:latest ruby-bullseye
+      - run: docker build -t crazyp83/ruby-bullseye:latest ruby-bullseye
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -565,9 +565,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby-bullseye:latest
+      - run: docker push crazyp83/ruby-bullseye:latest
         if: github.ref == 'refs/heads/master'
 
   systemd-bullseye:
@@ -585,7 +585,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/systemd-bullseye:latest systemd-bullseye
+      - run: docker build -t crazyp83/systemd-bullseye:latest systemd-bullseye
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -599,9 +599,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/systemd-bullseye:latest
+      - run: docker push crazyp83/systemd-bullseye:latest
         if: github.ref == 'refs/heads/master'
 
   debian-buster:
@@ -633,7 +633,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/baseimage-buster:latest baseimage-buster
+      - run: docker build -t crazyp83/baseimage-buster:latest baseimage-buster
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -645,14 +645,14 @@ jobs:
       - run: bundle exec rspec spec/baseimage-buster
 
       # save image as artifact
-      - run: docker save minimum2scp/baseimage-buster:latest | pigz -c - > /tmp/baseimage-buster.tar.gz
+      - run: docker save crazyp83/baseimage-buster:latest | pigz -c - > /tmp/baseimage-buster.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: baseimage-buster, path: /tmp/baseimage-buster.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/baseimage-buster:latest
+      - run: docker push crazyp83/baseimage-buster:latest
         if: github.ref == 'refs/heads/master'
 
   ruby-buster:
@@ -670,7 +670,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby-buster:latest ruby-buster
+      - run: docker build -t crazyp83/ruby-buster:latest ruby-buster
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -684,9 +684,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby-buster:latest
+      - run: docker push crazyp83/ruby-buster:latest
         if: github.ref == 'refs/heads/master'
 
   systemd-buster:
@@ -704,7 +704,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/systemd-buster:latest systemd-buster
+      - run: docker build -t crazyp83/systemd-buster:latest systemd-buster
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -718,9 +718,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/systemd-buster:latest
+      - run: docker push crazyp83/systemd-buster:latest
         if: github.ref == 'refs/heads/master'
 
   debian-stretch:
@@ -752,7 +752,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/baseimage-stretch:latest baseimage-stretch
+      - run: docker build -t crazyp83/baseimage-stretch:latest baseimage-stretch
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -764,14 +764,14 @@ jobs:
       - run: bundle exec rspec spec/baseimage-stretch
 
       # save image as artifact
-      - run: docker save minimum2scp/baseimage-stretch:latest | pigz -c - > /tmp/baseimage-stretch.tar.gz
+      - run: docker save crazyp83/baseimage-stretch:latest | pigz -c - > /tmp/baseimage-stretch.tar.gz
       - uses: actions/upload-artifact@v4
         with: { name: baseimage-stretch, path: /tmp/baseimage-stretch.tar.gz }
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/baseimage-stretch:latest
+      - run: docker push crazyp83/baseimage-stretch:latest
         if: github.ref == 'refs/heads/master'
 
   ruby-stretch:
@@ -789,7 +789,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/ruby-stretch:latest ruby-stretch
+      - run: docker build -t crazyp83/ruby-stretch:latest ruby-stretch
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -803,9 +803,9 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/ruby-stretch:latest
+      - run: docker push crazyp83/ruby-stretch:latest
         if: github.ref == 'refs/heads/master'
 
   systemd-stretch:
@@ -823,7 +823,7 @@ jobs:
 
       # build image
       - uses: actions/checkout@v4
-      - run: docker build -t minimum2scp/systemd-stretch:latest systemd-stretch
+      - run: docker build -t crazyp83/systemd-stretch:latest systemd-stretch
 
       # setup ruby
       - uses: ruby/setup-ruby@v1
@@ -837,8 +837,8 @@ jobs:
       # no need to save image as artifact
 
       # push image to docker hub
-      - run: docker login -u minimum2scp -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: docker login -u crazyp83 -p ${{ secrets.DOCKERHUB_TOKEN }}
         if: github.ref == 'refs/heads/master'
-      - run: docker push minimum2scp/systemd-stretch:latest
+      - run: docker push crazyp83/systemd-stretch:latest
         if: github.ref == 'refs/heads/master'
 
