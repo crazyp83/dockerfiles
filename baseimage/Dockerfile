@@ -1,5 +1,5 @@
-FROM minimum2scp/debian:latest
-LABEL maintainer="YAMADA Tsuyoshi <tyamada@minimum2scp.org>"
+FROM crazyp83/debian:latest
+LABEL maintainer="Paul Doyle <crazyp@icloud.com>"
 
 COPY build /tmp/build/baseimage
 RUN run-parts --report --exit-on-error /tmp/build/baseimage/scripts && rm -rfv /tmp/build
