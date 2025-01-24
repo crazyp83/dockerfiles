@@ -9,7 +9,7 @@ task :default => ['README.md']
 
 desc 'update debian-packages.json'
 file 'debian-packages.json' do |t|
-  tag = ENV['TAG'] || 'minimum2scp/baseimage-bullseye:latest'
+  tag = ENV['TAG'] || 'crazyp83/baseimage-bullseye:latest'
   tmpfile = Tempfile.new('packages')
   tmpfile.close
   fields = %w[
