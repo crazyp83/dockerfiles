@@ -24,7 +24,7 @@ jobs:
           bundler-cache: true
 
       # run test
-      - run: docker pull minimum2scp/<%= image %>:latest
+      - run: docker pull crazyp83/<%= image %>:latest
       - run: bundle exec rspec spec/<%= image %>/01apt_spec.rb -e 'apt list --upgradable'
 
       # notify to slack
@@ -43,7 +43,7 @@ jobs:
                 "fields": [
                   {
                     "title": "image",
-                    "value": "minimum2scp/<%= image %>:latest",
+                    "value": "crazyp83/<%= image %>:latest",
                     "short": false
                   }
                 ]
