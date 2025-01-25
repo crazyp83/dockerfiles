@@ -2,3 +2,4 @@
 
 run-parts --exit-on-error /opt/init-wrapper/pre-init.d
 exec "$@"
+su pi
