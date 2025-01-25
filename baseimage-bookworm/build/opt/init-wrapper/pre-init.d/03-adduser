@@ -1,14 +1,14 @@
-#! /bin/sh
+#!/bin/sh
 
-## environment variables
-##
-   - CUSTOM_GROUP            :  pi
-   - CUSTOM_GROUP_GID        :  1000
-   - CUSTOM_USER             :  pi
-   - CUSTOM_USER_UID         :  1000
-   - CUSTOM_USER_GECOS       :  Raspberry Pi
-   - CUSTOM_USER_SHELL       :  /bin/bash
-##
+environment variables
+
+- CUSTOM_GROUP            :  pi
+- CUSTOM_GROUP_GID        :  1000
+- CUSTOM_USER             :  pi
+- CUSTOM_USER_UID         :  1000
+- CUSTOM_USER_GECOS       :  Raspberry Pi
+- CUSTOM_USER_SHELL       :  /bin/bash
+
 
 if [ -n "${CUSTOM_USER}" ]; then
   ## create group

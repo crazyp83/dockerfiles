@@ -225,11 +225,11 @@ describe 'crazyp83/baseimage-bookworm' do
     end
   end
 
-  context 'with env [CUSTOM_USER=testuser]' do
+  context 'with env [CUSTOM_USER=pi]' do
     before(:all) do
       start_container({
         'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
-        'Env' => [ 'CUSTOM_USER=testuser' ]
+        'Env' => [ 'CUSTOM_USER=pi' ]
       })
     end
 
@@ -237,27 +237,27 @@ describe 'crazyp83/baseimage-bookworm' do
       stop_container
     end
 
-    describe group('testuser') do
+    describe group('pi') do
       it { should exist }
     end
 
-    describe user('testuser') do
+    describe user('pi') do
       it { should exist }
-      it { should belong_to_group('testuser') }
+      it { should belong_to_group('pi') }
       it { should have_login_shell '/bin/bash' }
     end
   end
 
-  context 'with env [CUSTOM_USER=testuser, CUSTOM_USER_UID=1999, CUSTOM_USER_SHELL=/bin/false, CUSTOM_GROUP=testgrp, CUSTOM_GROUP_GID=1999]' do
+  context 'with env [CUSTOM_USER=pi, CUSTOM_USER_UID=1000, CUSTOM_USER_SHELL=/bin/bash, CUSTOM_GROUP=testgrp, CUSTOM_GROUP_GID=1000]' do
     before(:all) do
       start_container({
         'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
         'Env' => [
-          'CUSTOM_USER=testuser',
-          'CUSTOM_USER_UID=1999',
-          'CUSTOM_USER_SHELL=/bin/false',
-          'CUSTOM_GROUP=testgrp',
-          'CUSTOM_GROUP_GID=1999',
+          'CUSTOM_USER=pi',
+          'CUSTOM_USER_UID=1000',
+          'CUSTOM_USER_SHELL=/bin/bash',
+          'CUSTOM_GROUP=pi',
+          'CUSTOM_GROUP_GID=1000',
         ]
       })
     end
@@ -266,16 +266,16 @@ describe 'crazyp83/baseimage-bookworm' do
       stop_container
     end
 
-    describe group('testgrp') do
+    describe group('pi') do
       it { should exist }
-      it { should have_gid 1999 }
+      it { should have_gid 1000 }
     end
 
-    describe user('testuser') do
+    describe user('pi') do
       it { should exist }
-      it { should belong_to_group('testgrp') }
-      it { should have_login_shell '/bin/false' }
-      it { should have_uid 1999 }
+      it { should belong_to_group('pi') }
+      it { should have_login_shell '/bin/bash' }
+      it { should have_uid 1000 }
     end
   end
 
