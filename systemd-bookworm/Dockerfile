@@ -11,9 +11,6 @@ RUN useradd -m -s /bin/bash -N -u 1000 pi && \
     usermod -g pi pi && \
     usermod -a -G sudo pi
 
-
-
-
 COPY build /tmp/build/systemd-bookworm
 RUN run-parts --report --exit-on-error /tmp/build/systemd-bookworm/scripts && rm -rfv /tmp/build
 EXPOSE 22
