@@ -4,7 +4,7 @@ describe 'crazyp83/ruby' do
   context 'without env' do
     before(:all) do
       start_container({
-        'Image' => ENV['DOCKER_IMAGE'] || "crazyp83/#{File.basename(__dir__)}:latest",
+        'Image' => ENV['DOCKER_IMAGE'] || "minimum2scp/#{File.basename(__dir__)}:latest",
       })
     end
 
@@ -38,11 +38,11 @@ describe 'crazyp83/ruby' do
 
     describe file('/usr/bin/ruby') do
       it { should be_symlink }
-      it { should be_linked_to('ruby3.1') }
+      it { should be_linked_to('ruby3.3') }
     end
 
-    describe command('ruby3.1 -v') do
-      its(:stdout) { should start_with('ruby 3.1.2-8.5') }
+    describe command('ruby3.3 -v') do
+      its(:stdout) { should start_with('ruby 3.3.6 ') }
     end
 
     describe file('/opt/rbenv') do
@@ -87,7 +87,7 @@ describe 'crazyp83/ruby' do
     end
 
     describe package('bundler') do
-      it { should be_installed.with_version('2.4.20-1') }
+      it { should be_installed.with_version('2.6.3-1') }
     end
   end
 end
